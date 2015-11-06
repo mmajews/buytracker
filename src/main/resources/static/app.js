@@ -9,7 +9,8 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         templateUrl: 'views/pages/home.html',
         controller: 'homeController'
     })
-
 }]);
+
+var mongoose = require('mongoose');
 
 

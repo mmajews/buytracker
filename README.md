@@ -63,7 +63,7 @@ folders in your project.
 angular-seed changes this location through the `.bowerrc` file.  Putting it in the app folder makes
 it easier to serve the files by a webserver.*
 
-### Run the Application
+### Run the conf.Application
 
 We have preconfigured the project with a simple development web server.  The simplest way to start
 this server is:
@@ -214,7 +214,7 @@ This will copy the contents of the `angular-loader.js` library file into the `in
 You can run this every time you update the version of Angular that you are using.
 
 
-## Serving the Application Files
+## Serving the conf.Application Files
 
 While angular is client-side-only technology and it's possible to create angular webapps that
 don't require a backend server at all, we recommend serving the project files using a local

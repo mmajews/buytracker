@@ -13,6 +13,9 @@
     "html5-boilerplate": "~5.2.0",
     "bootstrap": "~3.3.5",
     "angular-ui-router": "~0.2.15",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "express": "~4.7.2",
+    "mongoose": "~3.6.2",
+    "body-parser": "~1.5.2"
   }
 }
