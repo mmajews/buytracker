@@ -1,8 +1,12 @@
-package model;
+package app.model;
+
+import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
 public class Item {
+
+    @Id
     private String name;
     private Date lastModification;
     private String nameOfLastUser;
