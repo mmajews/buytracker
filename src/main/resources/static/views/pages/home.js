@@ -4,6 +4,7 @@ angular.module('myApp').controller('homeController', ['$scope', 'ItemService', '
 
         $scope.newItemName = "";
 
+        $scope.changeButtons = [];
         $scope.items = [];
 
         $scope.getItems = function () {
@@ -23,9 +24,15 @@ angular.module('myApp').controller('homeController', ['$scope', 'ItemService', '
             });
         };
 
-        $scope.triggerChangeModal = function () {
+        $scope.triggerChange = function ($index) {
+            $scope.changeButtons[$index] = true;
 
         };
+
+        $scope.changeLastBuyer = function (name, $index, item) {
+            $scope.changeButtons[$index] = false;
+
+        }
 
 
     }
