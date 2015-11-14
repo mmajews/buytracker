@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('myApp', ['ui.router']);
+var app = angular.module('myApp', ['ui.router', 'xeditable']);
 
 app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
@@ -11,6 +11,5 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     })
 }]);
 
-var mongoose = require('mongoose');
 
 

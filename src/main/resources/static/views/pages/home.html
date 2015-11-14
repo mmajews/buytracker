@@ -14,7 +14,6 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">History</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
@@ -30,19 +29,19 @@
                 <tr>
                     <th>Item name</th>
                     <th>Last buyer</th>
-                    <th>Change buyer</th>
                     <th>Date of modification</th>
                     <th></th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Ice cream</td>
-                    <td>Doe</td>
-                    <td>Buyers list</td>
-                    <td></td>
+                <tr ng-repeat="item in items">
+                    <td>{{item.name}}</td>
+                    <td>{{item.nameOfLastUser}}</td>
+                    <td>{{item.lastModification | date}}</td>
                     <td style="text-align: center">
-                        <button class="btn btn-primary">Change</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+                                ng-click="triggerChangeModal()">Change
+                        </button>
                     </td>
                 </tr>
                 </tbody>
@@ -50,13 +49,41 @@
             <hr>
             <form>
                 <p style="overflow: hidden;">Input new item name:</p>
-                <input class="btn btn-success" type="submit" name="search" value="Add new item" style="float: right"/>
+                <input ng-click="addNewItem()" class="btn btn-success" type="submit" name="search" value="Add new item"
+                       style="float: right"/>
 
                 <div style="overflow: hidden; padding-right: .5em;">
-                    <input class="form-control" type="text" name="term" style="width: 100%;"/>
+                    <input ng-model="newItemName" class="form-control" type="text" name="term" style="width: 100%;"/>
                 </div>
             </form>
 
+
         </div>
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
     </div>
+
 </div>
+
+
+
