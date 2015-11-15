@@ -36,7 +36,7 @@
                 <tr ng-repeat="item in items">
                     <td>{{item.name}}</td>
                     <td>{{item.nameOfLastUser}}</td>
-                    <td>{{item.lastModification | date}}</td>
+                    <td>{{item.lastModification | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
                     <td style="text-align: center">
                         <button class="btn btn-primary" ng-hide="changeButtons[$index]" data-toggle="modal"
                                 data-target="#myModal"
