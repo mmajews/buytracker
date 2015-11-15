@@ -10,7 +10,7 @@ angular.module('myApp').controller('homeController', ['$scope', 'ItemService', '
         $scope.getItems = function () {
             $scope.items = ItemService.getItems(function (success) {
                 $scope.items = success.data;
-                console.log($scope.items);
+                //console.log($scope.items);
             });
         };
 
@@ -31,6 +31,12 @@ angular.module('myApp').controller('homeController', ['$scope', 'ItemService', '
 
         $scope.changeLastBuyer = function (name, $index, item) {
             $scope.changeButtons[$index] = false;
+            item.nameOfLastUser = name;
+            ItemService.updateItem(item).then(function (s) {
+                $scope.getItems();
+            }, function (err) {
+                console.log("Error while updating data");
+            })
 
         }
 
