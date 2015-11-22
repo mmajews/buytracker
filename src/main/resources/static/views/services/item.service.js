@@ -18,6 +18,7 @@ angular.module('myApp').factory('ItemService', ['$http', function ($http) {
     };
 
     ItemService.updateItem = function (item, success, err) {
+        item.lastModification = new Date();
         return $http.put(urlBase + '/item', item).then(success, err);
     };
 
