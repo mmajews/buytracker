@@ -1,14 +1,29 @@
 package app.model;
 
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import java.util.Date;
 
-public class ItemChange {
+@Entity
+public class ItemChange extends IdentifiableObject {
     private Date dateOfModification;
-    private String nameOfItemModified;
-    private String previousBuyer;
-    private String currentBuyer;
 
-    public ItemChange(Date dateOfModification, String nameOfItemModified, String previousBuyer, String currentBuyer) {
+    @ManyToOne
+    private Item nameOfItemModified;
+
+    @OneToOne
+    private User previousBuyer;
+
+    @OneToOne
+    private User currentBuyer;
+
+    public ItemChange() {
+
+    }
+
+    public ItemChange(Date dateOfModification, Item nameOfItemModified, User previousBuyer, User currentBuyer) {
+        super();
         this.dateOfModification = dateOfModification;
         this.nameOfItemModified = nameOfItemModified;
         this.previousBuyer = previousBuyer;
@@ -19,15 +34,15 @@ public class ItemChange {
         return dateOfModification;
     }
 
-    public String getNameOfItemModified() {
+    public Item getNameOfItemModified() {
         return nameOfItemModified;
     }
 
-    public String getPreviousBuyer() {
+    public User getPreviousBuyer() {
         return previousBuyer;
     }
 
-    public String getCurrentBuyer() {
+    public User getCurrentBuyer() {
         return currentBuyer;
     }
 }

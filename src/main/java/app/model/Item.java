@@ -1,21 +1,24 @@
 package app.model;
 
-import org.springframework.data.annotation.Id;
-
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import java.util.Date;
 
-public class Item {
+@Entity
+public class Item extends IdentifiableObject {
 
-    @Id
+
     private String name;
     private Date lastModification;
-    private String nameOfLastUser;
+    @ManyToOne
+    private User nameOfLastUser;
 
     public Item() {
-
+        super();
     }
 
-    public Item(String name, Date lastModification, String nameOfLastUser) {
+    public Item(String name, Date lastModification, User nameOfLastUser) {
+        super();
         this.name = name;
         this.lastModification = lastModification;
         this.nameOfLastUser = nameOfLastUser;
@@ -37,11 +40,11 @@ public class Item {
         this.lastModification = lastModification;
     }
 
-    public String getNameOfLastUser() {
+    public User getNameOfLastUser() {
         return nameOfLastUser;
     }
 
-    public void setNameOfLastUser(String nameOfLastUser) {
+    public void setNameOfLastUser(User nameOfLastUser) {
         this.nameOfLastUser = nameOfLastUser;
     }
 }

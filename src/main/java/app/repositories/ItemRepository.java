@@ -1,8 +1,8 @@
 package app.repositories;
 
 import app.model.Item;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ItemRepository extends MongoRepository<Item, String> {
-    public Item findByName(String name);
+public interface ItemRepository extends JpaRepository<Item, String> {
+    Item findByName(String name);
 }
