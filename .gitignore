@@ -1,4 +1,5 @@
 /.idea
+*.iml
 logs/*
 !.gitkeep
 node_modules/
